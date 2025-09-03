@@ -34,7 +34,7 @@ class WacHvacModeOptionsConverter(OptionsConverter):
                 HVACMode.FAN_ONLY: ErdAcOperationMode.FAN_ONLY,
                 HVACMode.DRY: ErdAcOperationMode.DRY,
                 # If your device really supports AUTO temperature control (not Energy Saver),
-                # you can add: HVACMode.AUTO: ErdAcOperationMode.AUTO
+                HVACMode.AUTO: ErdAcOperationMode.AUTO
             }.get(value, ErdAcOperationMode.COOL)
         except Exception:  # noqa: BLE001
             _LOGGER.warning("Could not set HVAC mode to %s", value)
@@ -46,7 +46,7 @@ class WacHvacModeOptionsConverter(OptionsConverter):
                 ErdAcOperationMode.COOL: HVACMode.COOL,
                 ErdAcOperationMode.FAN_ONLY: HVACMode.FAN_ONLY,
                 ErdAcOperationMode.DRY: HVACMode.DRY,
-                # ErdAcOperationMode.AUTO: HVACMode.AUTO,
+                ErdAcOperationMode.AUTO: HVACMode.AUTO,
             }.get(value, HVACMode.COOL)
         except Exception:  # noqa: BLE001
             _LOGGER.warning("Could not determine operation mode mapping for %s", value)
